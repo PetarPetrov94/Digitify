@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../logo.svg";
+import "./About.css";
 
 const About = () => {
   const [data, setData] = React.useState(null);
@@ -11,9 +11,8 @@ const About = () => {
   }, []);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className="about-container">
+      <header className="about-header">
         <p>{!data ? "Loading..." : data}</p>
       </header>
     </div>

@@ -1,0 +1,12 @@
+.about-container {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin-bottom: 5%;
+  background-color: black;
+}
+.about-header {
+  display: inline;
+  color: white;
+}
