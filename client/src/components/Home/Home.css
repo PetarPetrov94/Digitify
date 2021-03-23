@@ -1,0 +1,13 @@
+.home-container {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin-bottom: 5%;
+  background-color: black;
+}
+
+.home-header {
+  display: inline;
+  color: white;
+}
