@@ -1,9 +1,9 @@
 const { Router } = require("express");
 
+const homeController = require("./controllers/homeController");
+
 const router = Router();
 
-router.get("/api", (req, res) => {
-  res.json({ message: "Hello from server!" });
-});
+router.use("/home", homeController);
 
 module.exports = router;
