@@ -11,11 +11,12 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="home-container">
-      <header className="home-header">
+    <main className="main-container">
+      <h1>Digitify</h1>
+      <div className="product-data">
         <p>{!data ? "Loading..." : data}</p>
-      </header>
-    </div>
+      </div>
+    </main>
   );
 };
 
