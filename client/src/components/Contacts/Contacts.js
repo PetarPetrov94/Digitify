@@ -4,7 +4,10 @@ const Contacts = () => {
   return (
     <div className="contact-container">
       <h1>Contacts Page</h1>
-      <p>If you have a question, contact us at: pp.petrov94@gmail.com</p>
+      <p>
+        If you have a question, contact us at:{" "}
+        <strong>pp.petrov94@gmail.com</strong>
+      </p>
     </div>
   );
 };

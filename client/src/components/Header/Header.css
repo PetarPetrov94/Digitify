@@ -4,7 +4,15 @@
   background-color: cornflowerblue;
   color: white;
   position: fixed;
+  text-align: left;
+  padding: 0%;
   top: 0;
   border-bottom: 3px solid white;
   border-top: 3px solid white;
+}
+
+.nav-item {
+  float: left;
+  margin-right: 20px;
+  text-decoration: none;
 }

@@ -1,4 +1,5 @@
 import "./Header.css";
+import HeaderItem from "./HeaderItem/HeaderItem";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -6,10 +7,18 @@ const Header = () => {
     <nav className="navigation">
       <ul>
         <li className="nav-item">Logo</li>
-        <Link to="/">Home</Link>
-        <Link to="/categories">Categories</Link>
-        <Link to="/about">About</Link>
-        <Link to="/contacts">Contacts</Link>
+        <Link to="/">
+          <HeaderItem>Home</HeaderItem>
+        </Link>
+        <Link to="/categories">
+          <HeaderItem>Categories</HeaderItem>
+        </Link>
+        <Link to="/about">
+          <HeaderItem>About</HeaderItem>
+        </Link>
+        <Link to="/contacts">
+          <HeaderItem>Contacts</HeaderItem>
+        </Link>
       </ul>
     </nav>
   );
