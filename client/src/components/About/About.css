@@ -6,7 +6,17 @@
   margin-bottom: 5%;
   background-color: black;
 }
-.about-header {
-  display: inline;
+.about-container h1 {
+  text-align: center;
+  color: white;
+  text-decoration: underline;
+  margin-top: 10%;
+  margin-bottom: 3%;
+}
+
+.about-container p {
+  width: 100%;
+  height: 35vh;
+  margin-top: 5%;
   color: white;
 }

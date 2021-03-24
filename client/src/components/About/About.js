@@ -12,9 +12,8 @@ const About = () => {
 
   return (
     <div className="about-container">
-      <header className="about-header">
-        <p>{!data ? "Loading..." : data}</p>
-      </header>
+      <h1>About Page</h1>
+      <p>{!data ? "Loading..." : data}</p>
     </div>
   );
 };
