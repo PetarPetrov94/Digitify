@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet";
 import "./Categories.css";
 
 const Categories = () => {
   return (
     <div className="categories-container">
+      <Helmet>
+        <title>Digitify | Categories</title>
+      </Helmet>
       <h1>Categories</h1>
       <div className="category-index">
         <p>First Category</p>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import "./About.css";
 
 const About = () => {
@@ -12,6 +13,9 @@ const About = () => {
 
   return (
     <div className="about-container">
+      <Helmet>
+        <title>Digitify | About</title>
+      </Helmet>
       <h1>About Page</h1>
       <p>{!data ? "Loading..." : data}</p>
     </div>
