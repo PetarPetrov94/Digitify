@@ -7,6 +7,7 @@ import Footer from "./components/Footer/Footer";
 import Contacts from "./components/Contacts/Contacts";
 import Categories from "./components/Categories/Categories";
 import Register from "./components/Register/Register";
+import Login from "./components/Login/Login";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/contacts" exact component={Contacts} />
           <Route path="/categories" exact component={Categories} />
           <Route path="/register" exact component={Register} />
+          <Route path="/login" exact component={Login} />
         </Switch>
         <Footer />
       </BrowserRouter>
