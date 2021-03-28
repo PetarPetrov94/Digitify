@@ -1,0 +1,16 @@
+.register-container {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin-bottom: 5%;
+  background-color: black;
+}
+
+.register-container h1 {
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  margin-top: 8%;
+  margin-bottom: 3%;
+}

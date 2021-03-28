@@ -6,9 +6,10 @@ const Header = () => {
   return (
     <nav className="navigation">
       <ul>
-        <img className="site-logo" src="digitify.png" alt="digitify-logo" />
         <Link to="/">
-          <HeaderItem>Home</HeaderItem>
+          <HeaderItem>
+            <img className="site-logo" src="digitify.png" alt="digitify-logo" />
+          </HeaderItem>
         </Link>
         <Link to="/categories">
           <HeaderItem>Categories</HeaderItem>
@@ -18,6 +19,12 @@ const Header = () => {
         </Link>
         <Link to="/contacts">
           <HeaderItem>Contacts</HeaderItem>
+        </Link>
+        <Link to="/register">
+          <HeaderItem>Register</HeaderItem>
+        </Link>
+        <Link to="/login">
+          <HeaderItem>Login</HeaderItem>
         </Link>
       </ul>
     </nav>
