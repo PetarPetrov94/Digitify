@@ -11,7 +11,7 @@ const Register = ({ history }) => {
     const { email, password } = e.target;
     authService
       .registerUser(email.value, password.value)
-      .then(history.push("/"));
+      .then(history.push("/login"));
   };
   return (
     <div className="register-container">
