@@ -7,10 +7,18 @@
   background-color: black;
 }
 
-.register-container h1 {
+.register-form h1 {
   text-align: center;
   color: white;
   text-decoration: none;
-  margin-top: 8%;
+  margin-top: 15%;
   margin-bottom: 3%;
+}
+
+.register-form {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  height: 90vh;
 }

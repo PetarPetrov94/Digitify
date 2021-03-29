@@ -24,13 +24,7 @@ const Login = () => {
           <Label for="password">
             <p style={{ color: "white" }}>Password</p>
           </Label>
-          <Input type="password" placeholder="Password" />
-        </FormGroup>
-        <FormGroup>
-          <Label for="repeatPassword">
-            <p style={{ color: "white" }}>Repeat Password</p>
-          </Label>
-          <Input type="repeatPassword" placeholder="Repeat Password" />
+          <Input type="password" placeholder="Enter your password" />
         </FormGroup>
         <Button className="btn-lg btn-light btn-block">Login</Button>
       </Form>
