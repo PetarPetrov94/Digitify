@@ -1,7 +1,15 @@
-const url = "http://localhost:4200";
+const url = "http://localhost:4300";
 
-export const registerUser = () => {
-  return fetch(url)
-    .then((res) => res.json())
-    .catch((err) => console.log(err));
+export const registerUser = (email, password) => {
+  let newUser = {
+    email,
+    password,
+  };
+  return fetch(`${url}/register`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newUser),
+  });
 };

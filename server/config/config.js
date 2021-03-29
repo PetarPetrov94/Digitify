@@ -1,6 +1,6 @@
 const config = {
   development: {
-    PORT: 4200,
+    PORT: 4300,
     DB_CONNECTION: "mongodb://localhost/digitify-dev",
     SALT_ROUNDS: 10,
     SECRET: "VeRiBiGSiCRiT",
