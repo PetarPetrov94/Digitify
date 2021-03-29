@@ -1,5 +1,5 @@
-import "./Header.css";
-import HeaderItem from "./HeaderItem/HeaderItem";
+import "./Navbar.css";
+import NavbarItem from "./NavbarItem/NavbarItem";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -7,24 +7,24 @@ const Header = () => {
     <nav className="navigation">
       <ul>
         <Link to="/">
-          <HeaderItem>
+          <NavbarItem>
             <img className="site-logo" src="digitify.png" alt="digitify-logo" />
-          </HeaderItem>
+          </NavbarItem>
         </Link>
         <Link to="/categories">
-          <HeaderItem>Categories</HeaderItem>
-        </Link>
-        <Link to="/about">
-          <HeaderItem>About</HeaderItem>
+          <NavbarItem>Categories</NavbarItem>
         </Link>
         <Link to="/contacts">
-          <HeaderItem>Contacts</HeaderItem>
+          <NavbarItem>Contacts</NavbarItem>
+        </Link>
+        <Link to="/about">
+          <NavbarItem>About</NavbarItem>
         </Link>
         <Link to="/register">
-          <HeaderItem>Register</HeaderItem>
+          <NavbarItem>Register</NavbarItem>
         </Link>
         <Link to="/login">
-          <HeaderItem>Login</HeaderItem>
+          <NavbarItem>Login</NavbarItem>
         </Link>
       </ul>
     </nav>

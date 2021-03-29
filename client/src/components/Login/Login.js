@@ -2,6 +2,7 @@
 import { Helmet } from "react-helmet";
 import "./Login.css";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -18,15 +19,22 @@ const Login = () => {
           <Label for="email">
             <p style={{ color: "white" }}>Email</p>
           </Label>
-          <Input type="email" placeholder="example@example.com" />
+          <Input id="email" type="email" placeholder="example@example.com" />
         </FormGroup>
         <FormGroup>
           <Label for="password">
             <p style={{ color: "white" }}>Password</p>
           </Label>
-          <Input type="password" placeholder="Enter your password" />
+          <Input
+            id="password"
+            type="password"
+            placeholder="Enter your password"
+          />
         </FormGroup>
         <Button className="btn-lg btn-light btn-block">Login</Button>
+        <span className="form-input-register">
+          Don't have an account? Register <Link to="/register">here</Link>
+        </span>
       </Form>
     </div>
   );

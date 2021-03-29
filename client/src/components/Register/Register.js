@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import "./Register.css";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   return (
@@ -16,21 +17,34 @@ const Register = () => {
           <Label for="email">
             <p style={{ color: "white" }}>Email</p>
           </Label>
-          <Input type="email" placeholder="example@example.com" />
+          <Input id="email" type="email" placeholder="example@example.com" />
         </FormGroup>
         <FormGroup>
           <Label for="password">
             <p style={{ color: "white" }}>Password</p>
           </Label>
-          <Input type="password" placeholder="Enter your desired Password" />
+          <Input
+            id="password"
+            type="password"
+            placeholder="Enter your desired Password"
+          />
         </FormGroup>
         <FormGroup>
           <Label for="repeatPassword">
             <p style={{ color: "white" }}>Repeat Password</p>
           </Label>
-          <Input type="repeatPassword" placeholder="Repeat Password" />
+          <Input
+            id="repeatPassword"
+            type="repeatPassword"
+            placeholder="Repeat your Password"
+          />
         </FormGroup>
-        <Button className="btn-lg btn-light btn-block">Register</Button>
+        <Button className="btn-lg btn-light btn-block" type="submit">
+          Register
+        </Button>
+        <span className="form-input-login">
+          Already have an account? Login <Link to="/login">here</Link>
+        </span>
       </Form>
     </div>
   );

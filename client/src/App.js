@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
-import Header from "./components/Header/Header";
+import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Contacts from "./components/Contacts/Contacts";
 import Categories from "./components/Categories/Categories";
@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="app">
       <BrowserRouter>
-        <Header />
+        <Navbar />
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/about" exact component={About} />
