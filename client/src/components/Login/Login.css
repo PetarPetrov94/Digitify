@@ -7,10 +7,22 @@
   background-color: black;
 }
 
-.login-container h1 {
+.login-form h1 {
   text-align: center;
   color: white;
   text-decoration: none;
-  margin-top: 8%;
+  margin-top: 15%;
   margin-bottom: 3%;
+}
+
+.login-form h2 {
+  color: white;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  height: 90vh;
 }

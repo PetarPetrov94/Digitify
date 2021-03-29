@@ -1,5 +1,7 @@
+/* eslint-disable react/style-prop-object */
 import { Helmet } from "react-helmet";
 import "./Login.css";
+import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 
 const Login = () => {
   return (
@@ -7,7 +9,31 @@ const Login = () => {
       <Helmet>
         <title>Digitify | Login</title>
       </Helmet>
-      <h1>Login Page</h1>
+      <Form className="login-form">
+        <h1 className="text-center">
+          Welcome to<span className="font-weight-bold"> Digitify</span>
+        </h1>
+        <h2 className="text-center">Login page</h2>
+        <FormGroup>
+          <Label for="email">
+            <p style={{ color: "white" }}>Email</p>
+          </Label>
+          <Input type="email" placeholder="example@example.com" />
+        </FormGroup>
+        <FormGroup>
+          <Label for="password">
+            <p style={{ color: "white" }}>Password</p>
+          </Label>
+          <Input type="password" placeholder="Password" />
+        </FormGroup>
+        <FormGroup>
+          <Label for="repeatPassword">
+            <p style={{ color: "white" }}>Repeat Password</p>
+          </Label>
+          <Input type="repeatPassword" placeholder="Repeat Password" />
+        </FormGroup>
+        <Button className="btn-lg btn-light btn-block">Login</Button>
+      </Form>
     </div>
   );
 };
