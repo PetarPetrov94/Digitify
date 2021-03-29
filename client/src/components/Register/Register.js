@@ -1,15 +1,24 @@
 import { Helmet } from "react-helmet";
-import "./Register.css";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import { Link } from "react-router-dom";
 
-const Register = () => {
+import "./Register.css";
+import * as authService from "../../services/authService";
+
+const Register = ({ history }) => {
+  const onRegisterSubmitHandler = (e) => {
+    e.preventDefault();
+    const { email, password } = e.target;
+    authService
+      .registerUser(email.value, password.value)
+      .then(history.push("/"));
+  };
   return (
     <div className="register-container">
       <Helmet>
         <title>Digitify | Register</title>
       </Helmet>
-      <Form className="register-form">
+      <Form className="register-form" onSubmit={onRegisterSubmitHandler}>
         <h1 className="text-center">
           Register to <span className="font-weight-bold">Digitify</span>
         </h1>
@@ -35,7 +44,7 @@ const Register = () => {
           </Label>
           <Input
             id="repeatPassword"
-            type="repeatPassword"
+            type="password"
             placeholder="Repeat your Password"
           />
         </FormGroup>
