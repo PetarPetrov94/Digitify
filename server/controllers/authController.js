@@ -3,12 +3,12 @@ const authService = require("../services/authService");
 
 const { COOKIE_NAME } = require("../config/config");
 
-router.post("/register", async (req, res) => {
+router.post("/", async (req, res) => {
   const { email, password, repeatPassword } = req.body;
 
-  if (password !== repeatPassword) {
-    return;
-  }
+  // if (password !== repeatPassword) {
+  //   return;
+  // }
 
   try {
     let user = await authService.registerUser({ email, password });

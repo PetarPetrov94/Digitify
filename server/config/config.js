@@ -10,10 +10,10 @@ const config = {
     PORT: 42,
     DB_CONNECTION:
       "mongodb+srv://admin:theDreamIsMyReality@digitify-prod.utsja.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    SALT_ROUNDS: 10,
+    SECRET: "VeRiBiGSiCRiT",
+    COOKIE_NAME: "USER_SESSION",
   },
-  SALT_ROUNDS: 10,
-  SECRET: "VeRiBiGSiCRiT",
-  COOKIE_NAME: "USER_SESSION",
 };
 
 module.exports = config[process.env.NODE_ENV.trim()];
