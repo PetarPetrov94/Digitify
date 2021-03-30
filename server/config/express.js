@@ -8,6 +8,7 @@ function expressSetup(app) {
       extended: true,
     })
   );
+  app.use(express.json());
 }
 
 module.exports = expressSetup;
