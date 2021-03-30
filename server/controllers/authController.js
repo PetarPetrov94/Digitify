@@ -23,8 +23,8 @@ router.post("/login", async (req, res) => {
 
   try {
     let token = await authService.loginUser({ email, password });
-    res.cookie(COOKIE_NAME, token);
-    res.send(JSON.stringify(token));
+    let cookie = res.cookie(COOKIE_NAME, token);
+    res.json({ cookie });
   } catch (error) {
     console.log(error);
   }
