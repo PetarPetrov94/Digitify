@@ -1,7 +1,7 @@
 const url = "http://localhost:4300";
 
 export const registerUser = (email, password) => {
-  return fetch(`${url}/register`, {
+  return fetch(`${url}/auth/register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

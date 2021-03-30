@@ -8,6 +8,6 @@ const router = Router();
 
 router.use("/about", aboutController);
 router.use("/home", homeController);
-router.use("/register", authController);
+router.use("/auth", authController);
 
 module.exports = router;

@@ -3,7 +3,7 @@ const authService = require("../services/authService");
 
 const { COOKIE_NAME } = require("../config/config");
 
-router.post("/", async (req, res) => {
+router.post("/register", async (req, res) => {
   const { email, password, repeatPassword } = req.body;
 
   // if (password !== repeatPassword) {
