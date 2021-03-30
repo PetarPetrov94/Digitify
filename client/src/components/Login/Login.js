@@ -1,16 +1,22 @@
 /* eslint-disable react/style-prop-object */
 import { Helmet } from "react-helmet";
-import "./Login.css";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import { Link } from "react-router-dom";
+import * as authService from "../../services/authService";
+import "./Login.css";
 
-const Login = () => {
+const Login = ({ history }) => {
+  const onLoginSubmitHander = (e) => {
+    e.preventDefault();
+    const { email, password } = e.target;
+    authService.loginUser(email.value, password.value).then(history.push("/"));
+  };
   return (
     <div className="login-container">
       <Helmet>
         <title>Digitify | Login</title>
       </Helmet>
-      <Form className="login-form">
+      <Form className="login-form" onSubmit={onLoginSubmitHander}>
         <h1 className="text-center">
           Welcome to<span className="font-weight-bold"> Digitify</span>
         </h1>

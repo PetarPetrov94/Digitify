@@ -12,3 +12,16 @@ export const registerUser = (email, password) => {
     }),
   });
 };
+
+export const loginUser = (email, password) => {
+  return fetch(`${url}/auth/login`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email,
+      password,
+    }),
+  });
+};

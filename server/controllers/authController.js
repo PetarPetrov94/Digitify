@@ -18,4 +18,16 @@ router.post("/register", async (req, res) => {
   }
 });
 
+router.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    let token = await authService.loginUser({ email, password });
+    res.cookie(COOKIE_NAME, token);
+    res.send(JSON.stringify(token));
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 module.exports = router;

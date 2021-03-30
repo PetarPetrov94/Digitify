@@ -10,6 +10,18 @@ const registerUser = async ({ email, password }) => {
   return userToRegister.save();
 };
 
+const loginUser = async ({ email, password }) => {
+  let userToLogin = await UserModel.findOne({ email });
+  if (!userToLogin) throw { message: "User not found!" };
+
+  let passwordMatch = await bcrypt.compare(password, userToLogin.password);
+  if (!passwordMatch) throw { message: "Wrong password!" };
+
+  let token = jwt.sign({ _id: email._id }, SECRET);
+  return token;
+};
+
 module.exports = {
   registerUser,
+  loginUser,
 };
