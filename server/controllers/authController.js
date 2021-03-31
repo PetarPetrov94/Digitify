@@ -23,11 +23,12 @@ router.post("/login", async (req, res) => {
 
   try {
     let token = await authService.loginUser({ email, password });
-    let cookie = res.cookie(COOKIE_NAME, token, { httpOnly: true });
+    res.cookie(COOKIE_NAME, token);
 
     res.status(200).json({
       message: "Logged in successfully!",
       token,
+      email,
     });
   } catch (error) {
     console.log(error);

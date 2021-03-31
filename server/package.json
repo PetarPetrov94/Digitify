@@ -18,6 +18,7 @@
     "start": "SET NODE_ENV=development && nodemon ./index.js",
     "prod": "SET NODE_ENV=production && node ./index.js"
   },
+  "proxy": "http://localhost:3000",
   "author": "Peter Petrov",
   "license": "ISC"
 }

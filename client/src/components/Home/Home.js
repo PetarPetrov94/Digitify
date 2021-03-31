@@ -6,7 +6,12 @@ const Home = () => {
   const [data, setData] = React.useState(null);
 
   React.useEffect(() => {
-    fetch("/home")
+    fetch("/home", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       .then((res) => res.json())
       .then((data) => setData(data.message));
   }, []);
