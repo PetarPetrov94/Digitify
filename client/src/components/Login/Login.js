@@ -9,7 +9,13 @@ const Login = ({ history }) => {
   const onLoginSubmitHander = (e) => {
     e.preventDefault();
     const { email, password } = e.target;
-    authService.loginUser(email.value, password.value).then(history.push("/"));
+    authService.loginUser(email.value, password.value).then((response) => {
+      const { token } = response;
+      console.log(response);
+      console.log(token);
+      localStorage.setItem("token", token);
+      history.push("/");
+    });
   };
   return (
     <div className="login-container">

@@ -3,15 +3,15 @@ const { COOKIE_NAME, SECRET } = require("../config/config");
 
 module.exports = function () {
   return (req, res, next) => {
-    let token = req.cookies[COOKIE_NAME];
+    let { authorization: token } = req.headers;
 
     if (token) {
-      jwt.verify(token, SECRET, function (err, decoded) {
+      jwt.verify(token, SECRET, function (err, payload) {
         if (err) {
           res.clearCookie(COOKIE_NAME);
         } else {
-          req.email = decoded;
-          res.locals.email = decoded;
+          req.token = payload;
+          res.locals = payload;
           res.locals.isAuthenticated = true;
         }
       });

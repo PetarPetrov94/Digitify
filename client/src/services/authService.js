@@ -23,5 +23,5 @@ export const loginUser = (email, password) => {
       email: email,
       password: password,
     }),
-  });
+  }).then((response) => response.json());
 };

@@ -31,6 +31,7 @@ router.post("/login", async (req, res) => {
       email,
     });
   } catch (error) {
+    res.sendStatus(404);
     console.log(error);
   }
 });

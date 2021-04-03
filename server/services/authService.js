@@ -17,7 +17,7 @@ const loginUser = async ({ email, password }) => {
   let passwordMatch = await bcrypt.compare(password, userToLogin.password);
   if (!passwordMatch) throw { message: "Wrong password!" };
 
-  let token = await jwt.sign({ _id: email._id }, SECRET, { expiresIn: "1h" });
+  let token = await jwt.sign({ email: email }, SECRET, { expiresIn: "1h" });
   return token;
 };
 
