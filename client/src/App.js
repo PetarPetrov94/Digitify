@@ -13,10 +13,8 @@ import Login from "./components/Login/Login";
 export const UserContext = createContext({});
 
 function App() {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({ isSuccessfullyLoggedIn: false });
   const userToken = localStorage.getItem("token");
-
-  console.log(user);
 
   useEffect(() => {
     fetch("/home/checkuser", {

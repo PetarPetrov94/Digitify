@@ -5,7 +5,9 @@ import { UserContext } from "./../../App";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  const { isSuccessfullyLoggedIn } = useContext(UserContext);
+  const {
+    user: { isSuccessfullyLoggedIn },
+  } = useContext(UserContext);
 
   return (
     <nav className="navigation">
@@ -24,7 +26,7 @@ const Header = () => {
         <Link to="/about">
           <NavbarItem>About</NavbarItem>
         </Link>
-        {Boolean(isSuccessfullyLoggedIn) && (
+        {Boolean(!isSuccessfullyLoggedIn) && (
           <>
             <Link to="/register">
               <NavbarItem>Register</NavbarItem>
@@ -33,6 +35,11 @@ const Header = () => {
               <NavbarItem>Login</NavbarItem>
             </Link>
           </>
+        )}
+        {Boolean(isSuccessfullyLoggedIn) && (
+          <Link to="/logout">
+            <NavbarItem>Logout</NavbarItem>
+          </Link>
         )}
       </ul>
     </nav>

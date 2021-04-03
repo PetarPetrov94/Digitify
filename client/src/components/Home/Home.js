@@ -10,8 +10,6 @@ const Home = () => {
     user: { isSuccessfullyLoggedIn, email: userEmail },
   } = useContext(UserContext);
 
-  console.log(userEmail);
-
   return (
     <main className="main-container">
       <Helmet>
