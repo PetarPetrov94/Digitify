@@ -1,8 +1,12 @@
+import React, { useContext } from "react";
 import "./Navbar.css";
 import NavbarItem from "./NavbarItem/NavbarItem";
+import { UserContext } from "./../../App";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const { isSuccessfullyLoggedIn } = useContext(UserContext);
+
   return (
     <nav className="navigation">
       <ul>
@@ -20,12 +24,16 @@ const Header = () => {
         <Link to="/about">
           <NavbarItem>About</NavbarItem>
         </Link>
-        <Link to="/register">
-          <NavbarItem>Register</NavbarItem>
-        </Link>
-        <Link to="/login">
-          <NavbarItem>Login</NavbarItem>
-        </Link>
+        {Boolean(isSuccessfullyLoggedIn) && (
+          <>
+            <Link to="/register">
+              <NavbarItem>Register</NavbarItem>
+            </Link>
+            <Link to="/login">
+              <NavbarItem>Login</NavbarItem>
+            </Link>
+          </>
+        )}
       </ul>
     </nav>
   );

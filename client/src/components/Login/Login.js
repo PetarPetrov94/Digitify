@@ -1,22 +1,26 @@
 /* eslint-disable react/style-prop-object */
+
+import React, { useContext } from "react";
 import { Helmet } from "react-helmet";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import { Link } from "react-router-dom";
 import * as authService from "../../services/authService";
+import { UserContext } from "../../App";
 import "./Login.css";
 
 const Login = ({ history }) => {
+  const { setUser } = useContext(UserContext);
   const onLoginSubmitHander = (e) => {
     e.preventDefault();
     const { email, password } = e.target;
     authService.loginUser(email.value, password.value).then((response) => {
       const { token } = response;
-      console.log(response);
-      console.log(token);
       localStorage.setItem("token", token);
+      setUser({});
       history.push("/");
     });
   };
+
   return (
     <div className="login-container">
       <Helmet>

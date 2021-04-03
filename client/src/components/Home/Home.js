@@ -1,25 +1,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { UserContext } from "../../App";
 import "./Home.css";
 
 const Home = () => {
-  const [userEmail, setUserEmail] = useState("");
-  const userToken = localStorage.getItem("token");
-  const hasUserLoggedIn = Boolean(userToken);
+  const {
+    user: { isSuccessfullyLoggedIn, email: userEmail },
+  } = useContext(UserContext);
 
-  useEffect(() => {
-    fetch("/home/checkuser", {
-      method: "GET",
-      headers: {
-        Authorization: userToken,
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => setUserEmail(data.email));
-  }, []);
+  console.log(userEmail);
 
   return (
     <main className="main-container">
@@ -28,15 +19,15 @@ const Home = () => {
       </Helmet>
       <h1>Digitify</h1>
       <div className="product-data">
-        <p>
-          {Boolean(hasUserLoggedIn) ? (
-            <div>Hello {userEmail}</div>
+        <div>
+          {Boolean(isSuccessfullyLoggedIn) ? (
+            <p>Hello {userEmail}</p>
           ) : (
             <div>
               Please login <Link to="/login">here</Link>
             </div>
           )}
-        </p>
+        </div>
       </div>
     </main>
   );
