@@ -15,6 +15,10 @@ module.exports = function () {
           res.locals.isAuthenticated = true;
         }
       });
+    } else {
+      req.token = "";
+      res.locals = "";
+      res.locals.isAuthenticated = false;
     }
 
     next();

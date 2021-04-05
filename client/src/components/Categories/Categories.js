@@ -1,4 +1,6 @@
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
+import CategoryItem from "./CategoryItems/CategoryItems";
 import "./Categories.css";
 
 const Categories = () => {
@@ -9,11 +11,15 @@ const Categories = () => {
       </Helmet>
       <h1>Categories</h1>
       <div className="category-index">
-        <p>First Category</p>
-        <p>Second Category</p>
-        <p>Third Category</p>
-        <p>Fourth Category</p>
-        <p>Fifth Category</p>
+        <Link to="/categories/computers">
+          <CategoryItem>Computers</CategoryItem>
+        </Link>
+        <Link to="/categories/phones">
+          <CategoryItem>Phones</CategoryItem>
+        </Link>
+        <Link to="/categories/phones">
+          <CategoryItem>Phones</CategoryItem>
+        </Link>
       </div>
     </div>
   );

@@ -19,7 +19,7 @@ const Home = () => {
       <div className="product-data">
         <div>
           {Boolean(isSuccessfullyLoggedIn) ? (
-            <p>Hello {userEmail}</p>
+            <p>Hello {userEmail.split("@")[0]}</p>
           ) : (
             <div>
               Please login <Link to="/login">here</Link>
