@@ -1,8 +1,9 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useContext } from "react";
-import "./Navbar.css";
 import NavbarItem from "./NavbarItem/NavbarItem";
 import { UserContext } from "./../../App";
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 const Header = () => {
   const {
@@ -37,9 +38,11 @@ const Header = () => {
           </>
         )}
         {Boolean(isSuccessfullyLoggedIn) && (
-          <Link to="/logout">
-            <NavbarItem>Logout</NavbarItem>
-          </Link>
+          <>
+            <Link to="/logout">
+              <NavbarItem>Logout</NavbarItem>
+            </Link>
+          </>
         )}
       </ul>
     </nav>

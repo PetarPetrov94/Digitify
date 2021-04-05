@@ -43,6 +43,14 @@ function App() {
             <Route path="/categories" exact component={Categories} />
             <Route path="/register" exact component={Register} />
             <Route path="/login" exact component={Login} />
+            <Route
+              path="/logout"
+              exact
+              render={({ history }) => {
+                localStorage.clear("token");
+                history.push("/");
+              }}
+            />
           </Switch>
           <Footer />
         </BrowserRouter>
