@@ -31,8 +31,18 @@ const CreateOffer = ({ history }) => {
             <p style={{ color: "white" }}>Product Description</p>
             <Input
               id="product-description"
-              type="text"
+              type="textarea"
               placeholder="e.g. The latest flagship"
+            />
+          </Label>
+        </FormGroup>
+        <FormGroup>
+          <Label for="product-image">
+            <p style={{ color: "white" }}>Image URL</p>
+            <Input
+              id="product-image"
+              type="text"
+              placeholder="Place your image URL here"
             />
           </Label>
         </FormGroup>
