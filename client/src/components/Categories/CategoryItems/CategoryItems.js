@@ -1,6 +1,6 @@
 import "./CategoryItems.css";
 const CategoryItem = (props) => {
-  return <li className="category-item">{props.children}</li>;
+  return <div className="category-item">{props.children}</div>;
 };
 
 export default CategoryItem;

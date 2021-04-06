@@ -17,8 +17,8 @@ const Categories = () => {
         <Link to="/categories/phones">
           <CategoryItem>Phones</CategoryItem>
         </Link>
-        <Link to="/categories/phones">
-          <CategoryItem>Phones</CategoryItem>
+        <Link to="/categories/laptops">
+          <CategoryItem>Laptops</CategoryItem>
         </Link>
       </div>
     </div>

@@ -9,6 +9,7 @@ import Contacts from "./components/Contacts/Contacts";
 import Categories from "./components/Categories/Categories";
 import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
+import Logout from "./components/Logout/Logout";
 
 export const UserContext = createContext({});
 
@@ -43,14 +44,7 @@ function App() {
             <Route path="/categories" exact component={Categories} />
             <Route path="/register" exact component={Register} />
             <Route path="/login" exact component={Login} />
-            <Route
-              path="/logout"
-              exact
-              render={({ history }) => {
-                localStorage.clear("token");
-                history.push("/");
-              }}
-            />
+            <Route path="/logout" exact component={Logout} />
           </Switch>
           <Footer />
         </BrowserRouter>
