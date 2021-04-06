@@ -3,7 +3,7 @@ import { Redirect } from "react-router";
 
 import { UserContext } from "../../App";
 
-export const Logout = ({ history }) => {
+const Logout = ({ history }) => {
   const { setUser } = useContext(UserContext);
   localStorage.clear("token");
   setUser({});

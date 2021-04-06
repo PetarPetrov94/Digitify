@@ -10,6 +10,7 @@ import Categories from "./components/Categories/Categories";
 import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
 import Logout from "./components/Logout/Logout";
+import CreateOffer from "./components/CreateOffer/CreateOffer";
 
 export const UserContext = createContext({});
 
@@ -45,6 +46,7 @@ function App() {
             <Route path="/register" exact component={Register} />
             <Route path="/login" exact component={Login} />
             <Route path="/logout" exact component={Logout} />
+            <Route path="/create-offer" exact component={CreateOffer} />
           </Switch>
           <Footer />
         </BrowserRouter>

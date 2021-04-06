@@ -42,6 +42,9 @@ const Header = () => {
             <Link to="/logout">
               <NavbarItem>Logout</NavbarItem>
             </Link>
+            <Link to="/create-offer">
+              <NavbarItem>Create Offer</NavbarItem>
+            </Link>
           </>
         )}
       </ul>
