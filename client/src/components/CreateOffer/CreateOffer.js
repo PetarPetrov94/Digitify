@@ -13,11 +13,6 @@ const CreateOffer = ({ history }) => {
       productType,
       productPrice,
     } = e.target;
-    console.log(productName.value);
-    console.log(productDescription.value);
-    console.log(productImage.value);
-    console.log(productType.value);
-    console.log(productPrice.value);
     offerService
       .createOffer(
         productName.value,
