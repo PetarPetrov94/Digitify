@@ -25,3 +25,5 @@ const offerSchema = new mongoose.Schema({
     min: 1,
   },
 });
+
+module.exports = mongoose.model("Offer", offerSchema);
