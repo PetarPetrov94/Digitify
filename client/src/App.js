@@ -11,6 +11,7 @@ import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
 import Logout from "./components/Logout/Logout";
 import CreateOffer from "./components/CreateOffer/CreateOffer";
+import Phones from "./components/Phones/Phones";
 
 export const UserContext = createContext({});
 
@@ -47,6 +48,7 @@ function App() {
             <Route path="/login" exact component={Login} />
             <Route path="/logout" exact component={Logout} />
             <Route path="/create-offer" exact component={CreateOffer} />
+            <Route path="/categories/phones" exact component={Phones} />
           </Switch>
           <Footer />
         </BrowserRouter>
