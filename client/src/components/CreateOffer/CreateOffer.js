@@ -1,13 +1,34 @@
-import { useContext } from "react";
 import { Helmet } from "react-helmet";
-import { Form, FormGroup, Input, Label } from "reactstrap";
-import { UserContext } from "../../App";
+import { Button, Form, FormGroup, Input, Label } from "reactstrap";
+import * as offerService from "../../services/offerService";
 import "./CreateOffer.css";
 
 const CreateOffer = ({ history }) => {
-  const { setUser } = useContext(UserContext);
   const onCreateSubmitHandler = (e) => {
     e.preventDefault();
+    const {
+      productName,
+      productDescription,
+      productImage,
+      productType,
+      productPrice,
+    } = e.target;
+    console.log(productName.value);
+    console.log(productDescription.value);
+    console.log(productImage.value);
+    console.log(productType.value);
+    console.log(productPrice.value);
+    offerService
+      .createOffer(
+        productName.value,
+        productDescription.value,
+        productImage.value,
+        productType.value,
+        productPrice.value
+      )
+      .then(() => {
+        history.push("/categories");
+      });
   };
   return (
     <div className="create-product-container">
@@ -17,51 +38,52 @@ const CreateOffer = ({ history }) => {
       <Form className="create-product-form" onSubmit={onCreateSubmitHandler}>
         <h1 className="text-center">Create Offer</h1>
         <FormGroup>
-          <Label for="product-name">
+          <Label for="productName">
             <p style={{ color: "white" }}>Product Name</p>
             <Input
-              id="product-name"
+              id="productName"
               type="text"
               placeholder="e.g. Samsung Note 20 Ultra"
             />
           </Label>
         </FormGroup>
         <FormGroup>
-          <Label for="product-description">
+          <Label for="productDescription">
             <p style={{ color: "white" }}>Product Description</p>
             <Input
-              id="product-description"
+              id="productDescription"
               type="textarea"
               placeholder="e.g. The latest flagship"
             />
           </Label>
         </FormGroup>
         <FormGroup>
-          <Label for="product-image">
+          <Label for="productImage">
             <p style={{ color: "white" }}>Image URL</p>
             <Input
-              id="product-image"
+              id="productImage"
               type="text"
               placeholder="Place your image URL here"
             />
           </Label>
         </FormGroup>
         <FormGroup>
-          <Label for="product-type">
+          <Label for="productType">
             <p style={{ color: "white" }}>Type of product</p>
-            <Input type="select" name="product-type" id="product-type">
-              <option>Computer</option>
-              <option>Phone</option>
-              <option>Laptop</option>
+            <Input type="select" name="productType" id="productType">
+              <option value="computer">Computer</option>
+              <option value="phone">Phone</option>
+              <option value="laptop">Laptop</option>
             </Input>
           </Label>
         </FormGroup>
         <FormGroup>
-          <Label for="product-price">
+          <Label for="productPrice">
             <p style={{ color: "white" }}>Price</p>
-            <Input tpye="text" name="product-price" id="product-price" />
+            <Input tpye="text" name="productPrice" id="productPrice" />
           </Label>
         </FormGroup>
+        <Button className="btn-lg btn-light btn-block">Create Offer</Button>
       </Form>
     </div>
   );

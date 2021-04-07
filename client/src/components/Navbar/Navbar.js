@@ -39,11 +39,11 @@ const Header = () => {
         )}
         {Boolean(isSuccessfullyLoggedIn) && (
           <>
-            <Link to="/logout">
-              <NavbarItem>Logout</NavbarItem>
-            </Link>
             <Link to="/create-offer">
               <NavbarItem>Create Offer</NavbarItem>
+            </Link>
+            <Link to="/logout">
+              <NavbarItem>Logout</NavbarItem>
             </Link>
           </>
         )}
