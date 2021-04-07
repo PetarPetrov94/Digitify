@@ -12,6 +12,8 @@ import Login from "./components/Login/Login";
 import Logout from "./components/Logout/Logout";
 import CreateOffer from "./components/CreateOffer/CreateOffer";
 import Phones from "./components/Phones/Phones";
+import Laptops from "./components/Laptops/Laptops";
+import TVs from "./components/TVs/TVs";
 
 export const UserContext = createContext({});
 
@@ -49,6 +51,8 @@ function App() {
             <Route path="/logout" exact component={Logout} />
             <Route path="/create-offer" exact component={CreateOffer} />
             <Route path="/categories/phones" exact component={Phones} />
+            <Route path="/categories/laptops" exact component={Laptops} />
+            <Route path="/categories/tvs" exact component={TVs} />
           </Switch>
           <Footer />
         </BrowserRouter>

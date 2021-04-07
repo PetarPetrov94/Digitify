@@ -1,3 +1,4 @@
+import "./Phones.css";
 const Phones = () => {
   return (
     <div className="phone-container">
