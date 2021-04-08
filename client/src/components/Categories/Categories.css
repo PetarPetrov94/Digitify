@@ -14,22 +14,6 @@
   margin-bottom: 2%;
 }
 
-.category-index {
-  display: inline-block;
-  width: 100%;
-  height: 75vh;
-  text-align: left;
-  margin-bottom: auto;
-  background-color: black;
-}
-
-.category-index p {
-  width: 100%;
-  height: 15vh;
-  margin-top: auto;
-  margin-bottom: 0%;
-  color: white;
-}
 .card-body {
   display: inline-block;
   margin-left: 20px;
