@@ -10,7 +10,13 @@ const getLaptopProducts = async (productType) => {
   return laptops;
 };
 
+const getTVProducts = async (productType) => {
+  const tvs = await OfferModel.find({ productType }).lean();
+  return tvs;
+};
+
 module.exports = {
   getPhoneProducts,
   getLaptopProducts,
+  getTVProducts,
 };

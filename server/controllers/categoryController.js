@@ -27,4 +27,17 @@ router.get("/laptops", (req, res) => {
   }
 });
 
+router.get("/tvs", (req, res) => {
+  const productType = "tv";
+  try {
+    categoryServise.getTVProducts(productType).then((tvs) => {
+      res.status(200).json({ tvs });
+    });
+  } catch (error) {
+    res.status(404).json({
+      message: "No products found",
+    });
+  }
+});
+
 module.exports = router;

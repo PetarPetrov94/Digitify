@@ -25,9 +25,9 @@ const TVs = () => {
   return (
     <div className="tv-container">
       <Helmet>
-        <title>Digitify | Phones</title>
+        <title>Digitify | TVs</title>
       </Helmet>
-      <h1>Phones</h1>
+      <h1>TVs</h1>
       {tvs.map((tv, index) => {
         return (
           <Card key={index} className="tv-body">

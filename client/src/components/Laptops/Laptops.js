@@ -25,9 +25,9 @@ const Laptops = () => {
   return (
     <div className="laptop-container">
       <Helmet>
-        <title>Digitify | Phones</title>
+        <title>Digitify | Laptops</title>
       </Helmet>
-      <h1>Phones</h1>
+      <h1>Laptops</h1>
       {laptops.map((laptop, index) => {
         return (
           <Card key={index} className="laptop-body">
