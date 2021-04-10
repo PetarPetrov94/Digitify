@@ -37,6 +37,7 @@ const TVs = () => {
                 {tv.productName}
               </CardTitle>
               <CardText key={index}>{tv.productDescription}</CardText>
+              <CardText key={index}>Price: {tv.productPrice} leva</CardText>
             </CardBody>
           </Card>
         );

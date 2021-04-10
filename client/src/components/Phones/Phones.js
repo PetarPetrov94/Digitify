@@ -41,6 +41,7 @@ const Phones = () => {
                 {phone.productName}
               </CardTitle>
               <CardText key={index}>{phone.productDescription}</CardText>
+              <CardText key={index}>Price: {phone.productPrice} leva</CardText>
             </CardBody>
           </Card>
         );
