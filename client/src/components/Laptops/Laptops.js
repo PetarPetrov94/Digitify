@@ -12,7 +12,7 @@ const Laptops = () => {
   useEffect(() => {
     setFetchingState(true);
 
-    categoryService.findPhoneOffers().then((data) => {
+    categoryService.findLaptopOffers().then((data) => {
       setLaptops(data);
       setFetchingState(false);
     });
