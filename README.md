@@ -1,5 +1,5 @@
 # Digitify
-Online catalogue for the technology enthusiasts
+Online catalogue for the technology enthusiasts.
 This is my project for the ReactJS module of Softuni in March 2021.
 The purpouse of this project is for people to display their personal digital setup.
 
