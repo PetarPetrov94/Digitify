@@ -33,7 +33,11 @@ const Phones = () => {
       {phones.map((phone, index) => {
         return (
           <Card key={index} className="phone-body">
-            <CardImg key={index} top width="10%" src={phone.productImage} />
+            <CardImg
+              key={index}
+              className="phone-image"
+              src={phone.productImage}
+            />
             <CardBody>
               <CardTitle key={index} tag="h5">
                 {phone.productName}
