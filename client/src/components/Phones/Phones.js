@@ -22,8 +22,6 @@ const Phones = () => {
     return <p>Loading...</p>;
   }
 
-  console.log(phones);
-
   return (
     <div className="phone-container">
       <Helmet>

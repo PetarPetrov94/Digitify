@@ -6,9 +6,11 @@ const { COOKIE_NAME } = require("../config/config");
 router.post("/register", async (req, res) => {
   const { email, password, repeatPassword } = req.body;
 
-  // if (password !== repeatPassword) {
-  //   return;
-  // }
+  if (password !== repeatPassword) {
+    res.sendStatus(400).json({
+      message: "Passwords don't match",
+    });
+  }
 
   try {
     let user = await authService.registerUser({ email, password });

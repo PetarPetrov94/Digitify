@@ -1,7 +1,6 @@
 .laptop-container {
   display: inline-block;
   width: 100%;
-  height: auto;
   text-align: center;
   background-color: black;
 }
@@ -11,4 +10,17 @@
   text-decoration: none;
   margin-top: 8%;
   margin-bottom: 3%;
+}
+.laptop-body {
+  display: inline-block;
+  margin-left: 20px;
+  max-width: 330px;
+  max-height: 430px;
+  background-color: black;
+  color: white;
+}
+
+.laptop-image {
+  width: 330px;
+  height: 290px;
 }

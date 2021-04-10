@@ -69,7 +69,7 @@ const CreateOffer = ({ history }) => {
           <Label for="productType">
             <p style={{ color: "white" }}>Type of product</p>
             <Input type="select" name="productType" id="productType">
-              <option value="computer">Computer</option>
+              <option value="tv">TV</option>
               <option value="phone">Phone</option>
               <option value="laptop">Laptop</option>
             </Input>
