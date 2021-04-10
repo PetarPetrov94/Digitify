@@ -9,6 +9,9 @@ import { UserContext } from "../../App";
 import "./Login.css";
 
 const Login = ({ history }) => {
+  if (localStorage.getItem("token")) {
+    history.push("/");
+  }
   const { setUser } = useContext(UserContext);
   const onLoginSubmitHander = (e) => {
     e.preventDefault();

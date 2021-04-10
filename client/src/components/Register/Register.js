@@ -6,6 +6,9 @@ import "./Register.css";
 import * as authService from "../../services/authService";
 
 const Register = ({ history }) => {
+  if (localStorage.getItem("token")) {
+    history.push("/");
+  }
   const onRegisterSubmitHandler = (e) => {
     e.preventDefault();
     const { email, password } = e.target;

@@ -4,6 +4,9 @@ import * as offerService from "../../services/offerService";
 import "./CreateOffer.css";
 
 const CreateOffer = ({ history }) => {
+  if (!localStorage.getItem("token")) {
+    history.push("/");
+  }
   const onCreateSubmitHandler = (e) => {
     e.preventDefault();
     const {
