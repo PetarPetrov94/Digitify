@@ -1,7 +1,6 @@
 const url = "http://localhost:4300";
 
 const normalisePhoneResponse = ({ phones } = { phones: [] }) => phones;
-const normalizeLaptopResponse = ({ laptops } = { laptops: [] }) => laptops;
 
 export const findPhoneOffers = () => {
   return fetch(`${url}/categories/phones`, {
@@ -16,6 +15,8 @@ export const findPhoneOffers = () => {
     .then(normalisePhoneResponse);
 };
 
+const normalizeLaptopResponse = ({ laptops } = { laptops: [] }) => laptops;
+
 export const findLaptopOffers = () => {
   return fetch(`${url}/categories/laptops`, {
     method: "GET",
@@ -27,4 +28,19 @@ export const findLaptopOffers = () => {
       return response.json();
     })
     .then(normalizeLaptopResponse);
+};
+
+const normalizeTvResponse = ({ tvs } = { tvs: [] }) => tvs;
+
+export const findTvOffers = () => {
+  return fetch(`${url}/categories/tvs`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then(normalizeTvResponse);
 };
