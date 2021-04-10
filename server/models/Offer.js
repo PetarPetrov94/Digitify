@@ -9,6 +9,8 @@ const offerSchema = new mongoose.Schema({
   productDescription: {
     type: String,
     required: true,
+    minlength: 4,
+    maxlength: 50,
   },
   productImage: {
     type: String,

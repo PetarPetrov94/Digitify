@@ -5,10 +5,14 @@ const userSchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
+    unique: true,
+    minlength: 8,
+    validate: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,
   },
   password: {
     type: String,
     required: true,
+    minlength: 6,
   },
 });
 
