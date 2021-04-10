@@ -1,6 +1,7 @@
 const url = "http://localhost:4300";
 
-const normalisePhoneResponse = ({ phones } = { phones: [] }) => phones;
+const normalisePhoneResponse = ({ phones } = { phones: [] }) =>
+  phones.concat(phones).concat(phones);
 
 export const findPhoneOffers = () => {
   return fetch(`${url}/categories/phones`, {

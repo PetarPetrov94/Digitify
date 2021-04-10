@@ -15,7 +15,11 @@ const Header = () => {
       <ul>
         <Link to="/">
           <NavbarItem>
-            <img className="site-logo" src="digitify.png" alt="digitify-logo" />
+            <img
+              className="site-logo"
+              src="/digitify.png"
+              alt="digitify-logo"
+            />
           </NavbarItem>
         </Link>
         <Link to="/categories">
