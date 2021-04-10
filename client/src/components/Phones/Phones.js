@@ -6,46 +6,45 @@ import * as categoryService from "../../services/categoryService";
 import "./Phones.css";
 
 const Phones = () => {
-  const phones = JSON.stringify(categoryService.findPhoneOffers({}));
-  console.log(phones);
+  const [phones, setPhones] = useState([]);
+  const [fetchingState, setFetchingState] = useState(true);
 
-  // const [products, setProducts] = useState(null);
+  useEffect(() => {
+    setFetchingState(true);
 
-  // useEffect(() => {
+    categoryService.findPhoneOffers().then((data) => {
+      setPhones(data);
+      setFetchingState(false);
+    });
+  }, []);
 
-  //   setProducts(phones);
-  // }, []);
-  // console.log(products);
-  if (phones) {
-    return (
-      <div className="phone-container">
-        <Helmet>
-          <title>Digitify | Phones</title>
-        </Helmet>
-        <h1>Phones</h1>
-        {Object.keys(phones).map((phone, key) => {
-          return (
-            <Card key={key} className="phone-body">
-              <CardImg
-                key={key}
-                top
-                width="10%"
-                src={phones[key].productImage}
-              />
-              <CardBody>
-                <CardTitle key={key} tag="h5">
-                  {phones[key].productName}
-                </CardTitle>
-                <CardText key={key}>{phones[key].productDescription}</CardText>
-              </CardBody>
-            </Card>
-          );
-        })}
-      </div>
-    );
-  } else {
+  if (fetchingState) {
     return <p>Loading...</p>;
   }
+
+  console.log(phones);
+
+  return (
+    <div className="phone-container">
+      <Helmet>
+        <title>Digitify | Phones</title>
+      </Helmet>
+      <h1>Phones</h1>
+      {phones.map((phone, index) => {
+        return (
+          <Card key={index} className="phone-body">
+            <CardImg key={index} top width="10%" src={phone.productImage} />
+            <CardBody>
+              <CardTitle key={index} tag="h5">
+                {phone.productName}
+              </CardTitle>
+              <CardText key={index}>{phone.productDescription}</CardText>
+            </CardBody>
+          </Card>
+        );
+      })}
+    </div>
+  );
 };
 
 export default Phones;

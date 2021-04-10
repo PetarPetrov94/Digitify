@@ -54,9 +54,9 @@ function App() {
             <Route path="/categories/laptops" exact component={Laptops} />
             <Route path="/categories/tvs" exact component={TVs} />
           </Switch>
-          <Footer />
         </BrowserRouter>
       </div>
+      <Footer />
     </UserContext.Provider>
   );
 }

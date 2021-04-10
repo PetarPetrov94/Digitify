@@ -1,12 +1,16 @@
 const url = "http://localhost:4300";
 
+const normalisePhoneResponse = ({ phones } = { phones: [] }) => phones;
+
 export const findPhoneOffers = () => {
   return fetch(`${url}/categories/phones`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
-  }).then((response) => {
-    response.json();
-  });
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then(normalisePhoneResponse);
 };
