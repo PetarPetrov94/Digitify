@@ -10,6 +10,8 @@ export const registerUser = (email, password) => {
       email: email,
       password: password,
     }),
+  }).then((response) => {
+    return response.json();
   });
 };
 
