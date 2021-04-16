@@ -1,12 +1,15 @@
 import { Helmet } from "react-helmet";
+import { useState } from "react";
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 import * as offerService from "../../services/offerService";
+import InputError from "../Shared/InputError/InputError";
 import "./CreateOffer.css";
 
 const CreateOffer = ({ history }) => {
   if (!localStorage.getItem("token")) {
     history.push("/");
   }
+  const [errorMessage, setErrorMessage] = useState("");
   const onCreateSubmitHandler = (e) => {
     e.preventDefault();
     const {
@@ -16,17 +19,31 @@ const CreateOffer = ({ history }) => {
       productType,
       productPrice,
     } = e.target;
-    offerService
-      .createOffer(
-        productName.value,
-        productDescription.value,
-        productImage.value,
-        productType.value,
-        productPrice.value
-      )
-      .then(() => {
-        history.push("/categories");
-      });
+
+    if (productName.value.length < 1 || productName.value.length > 40) {
+      setErrorMessage("Product name is too long or not submitted");
+    } else if (
+      productDescription.value.length < 10 ||
+      productDescription.value.length > 50
+    ) {
+      setErrorMessage("Product description is too long or not submitted");
+    } else if (!productImage.value.startsWith("https")) {
+      setErrorMessage("Invalid image url. Must start with https");
+    } else if (!Number(productPrice) || Number(productPrice) < 1) {
+      setErrorMessage("Product price must be a number and no smaller than 1");
+    } else {
+      offerService
+        .createOffer(
+          productName.value,
+          productDescription.value,
+          productImage.value,
+          productType.value,
+          productPrice.value
+        )
+        .then(() => {
+          history.push("/categories");
+        });
+    }
   };
   return (
     <div className="create-product-container">
@@ -81,6 +98,7 @@ const CreateOffer = ({ history }) => {
             <Input tpye="text" name="productPrice" id="productPrice" />
           </Label>
         </FormGroup>
+        <InputError>{errorMessage}</InputError>
         <Button className="btn-lg btn-light btn-block">Create Offer</Button>
       </Form>
     </div>
