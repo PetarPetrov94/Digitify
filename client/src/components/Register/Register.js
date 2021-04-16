@@ -3,18 +3,28 @@ import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import { Link } from "react-router-dom";
 
 import "./Register.css";
+import InputError from "../Shared/InputError/InputError";
 import * as authService from "../../services/authService";
+import { useState } from "react";
 
 const Register = ({ history }) => {
   if (localStorage.getItem("token")) {
     history.push("/");
   }
+
+  const [errorMessage, setErrorMessage] = useState("");
+
   const onRegisterSubmitHandler = (e) => {
     e.preventDefault();
-    const { email, password } = e.target;
-    authService
-      .registerUser(email.value, password.value)
-      .then(history.push("/login"));
+    const { email, password, repeatPassword } = e.target;
+
+    if (password.value !== repeatPassword.value) {
+      setErrorMessage("Passwords don't match");
+    } else {
+      authService
+        .registerUser(email.value, password.value)
+        .then(history.push("/login"));
+    }
   };
   return (
     <div className="register-container">
@@ -51,6 +61,7 @@ const Register = ({ history }) => {
             placeholder="Repeat your Password"
           />
         </FormGroup>
+        <InputError>{errorMessage}</InputError>
         <Button className="btn-lg btn-light btn-block" type="submit">
           Register
         </Button>
