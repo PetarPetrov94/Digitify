@@ -17,8 +17,9 @@ const Register = ({ history }) => {
   const onRegisterSubmitHandler = (e) => {
     e.preventDefault();
     const { email, password, repeatPassword } = e.target;
-
-    if (password.value !== repeatPassword.value) {
+    if (!email.value.includes("@")) {
+      setErrorMessage("Invalid email");
+    } else if (password.value !== repeatPassword.value) {
       setErrorMessage("Passwords don't match");
     } else {
       authService
@@ -39,7 +40,7 @@ const Register = ({ history }) => {
           <Label for="email">
             <p style={{ color: "white" }}>Email</p>
           </Label>
-          <Input id="email" type="email" placeholder="example@example.com" />
+          <Input id="email" type="text" placeholder="example@example.com" />
         </FormGroup>
         <FormGroup>
           <Label for="password">
