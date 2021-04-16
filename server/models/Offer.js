@@ -11,7 +11,7 @@ const offerSchema = new mongoose.Schema({
   productDescription: {
     type: String,
     required: true,
-    minlength: 4,
+    minlength: 10,
     maxlength: 50,
   },
   productImage: {
